@@ -2,8 +2,15 @@
 
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react"
 
 export function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const scrollToTracking = () => {
     document.getElementById("live-tracking")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -12,16 +19,43 @@ export function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Hero Images Grid */}
       <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-3">
-        <div className="relative h-full w-full">
-          <img src="/whale-shark-swimming-underwater-blue-ocean.jpg" alt="Tiburón ballena" className="h-full w-full object-cover" />
+        <div
+          className={`relative h-full w-full transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+          }`}
+          style={{ transitionDelay: "0ms" }}
+        >
+          <img
+            src="/whale-shark-swimming-underwater-blue-ocean.jpg"
+            alt="Tiburón ballena"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-primary/20" />
         </div>
-        <div className="relative h-full w-full">
-          <img src="/great-white-shark-ocean-surface-dramatic.jpg" alt="Gran tiburón blanco" className="h-full w-full object-cover" />
+        <div
+          className={`relative h-full w-full transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+          }`}
+          style={{ transitionDelay: "200ms" }}
+        >
+          <img
+            src="/great-white-shark-ocean-surface-dramatic.jpg"
+            alt="Gran tiburón blanco"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-primary/30" />
         </div>
-        <div className="relative hidden h-full w-full md:block">
-          <img src="/shark-silhouette-deep-blue-ocean-underwater.jpg" alt="Tiburón en el océano" className="h-full w-full object-cover" />
+        <div
+          className={`relative hidden h-full w-full md:block transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
+          }`}
+          style={{ transitionDelay: "400ms" }}
+        >
+          <img
+            src="/shark-silhouette-deep-blue-ocean-underwater.jpg"
+            alt="Tiburón en el océano"
+            className="h-full w-full object-cover"
+          />
           <div className="absolute inset-0 bg-primary/20" />
         </div>
       </div>
