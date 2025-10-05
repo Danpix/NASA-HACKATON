@@ -1,3 +1,8 @@
+/**
+ * AI-Assisted: Text translated to English by GPT-5 on 2025-10-05 (requested by Jose).
+ * Structure supported by Vercel platform.
+ */
+
 "use client"
 
 import { useState } from "react"
@@ -8,7 +13,6 @@ import { RefreshCw } from "lucide-react"
 export function SharkGallery() {
   const [currentSet, setCurrentSet] = useState<"set1" | "set2">("set1")
   const { ref, isVisible } = useScrollAnimation()
-
 
   const gallerySet1 = [
     "/gallery/gallery-1.jpg",
@@ -50,9 +54,11 @@ export function SharkGallery() {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Ejemplos de datos procesados</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+              Examples of Processed Data
+            </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Prueba darle al boton y veras la magia!😀
+              Try clicking the button and you’ll see the magic! 😀
             </p>
           </div>
 
@@ -67,7 +73,7 @@ export function SharkGallery() {
               >
                 <img
                   src={image || "/placeholder.svg"}
-                  alt={`Tiburón ${index + 1}`}
+                  alt={`Shark ${index + 1}`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -81,7 +87,7 @@ export function SharkGallery() {
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               <RefreshCw className="mr-2 h-5 w-5" />
-              {currentSet === "set1" ? "MIRA EL FILTRADO!" : "VOLVER"}
+              {currentSet === "set1" ? "SEE FILTERED DATA!" : "GO BACK"}
             </Button>
           </div>
         </div>

@@ -1,3 +1,8 @@
+/**
+ * AI-Assisted: Text translated to English by GPT-5 on 2025-10-05 (requested by Jose).
+ * Structure supported by Vercel platform.
+ */
+
 "use client"
 
 import { Card } from "@/components/ui/card"
@@ -17,20 +22,20 @@ export function References() {
     >
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
-          Referencias y Tecnología
+          References and Technology
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Datos recopilados mediante tecnología satelital avanzada y respaldados por investigaciones científicas.
+          Data collected using advanced satellite technology and supported by scientific research.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Satélites */}
+          {/* Satellites */}
           <Card className="p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-primary/10 rounded-lg">
                 <Satellite className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Satélites Utilizados</h3>
+              <h3 className="text-2xl font-bold text-foreground">Satellites Used</h3>
             </div>
             <div className="space-y-4">
               <div className="border-l-4 border-primary pl-4">
@@ -45,17 +50,17 @@ export function References() {
                     rel="noopener noreferrer"
                     className="underline hover:text-primary"
                   >
-                    Satélite PACE
+                    PACE Satellite
                   </a>{" "}
-                  monitorea el color oceánico y la concentración de clorofila, permitiendo detectar fitoplancton
-                  y su relación con los ecosistemas marinos.
+                  monitors ocean color and chlorophyll concentration, enabling detection of phytoplankton
+                  and its relationship with marine ecosystems.
                 </p>
               </div>
-              
+
               <div className="border-l-4 border-primary pl-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Badge variant="secondary">SWOT</Badge>
-                  <span className="text-sm text-muted-foreground">Topografía Oceánica</span>
+                  <span className="text-sm text-muted-foreground">Ocean Topography</span>
                 </div>
                 <p className="text-sm text-foreground">
                   <a
@@ -66,19 +71,20 @@ export function References() {
                   >
                     SWOT (Surface Water and Ocean Topography)
                   </a>{" "}
-                  mide la altura y movimiento de la superficie marina, ayudando a analizar corrientes y zonas de alta productividad oceánica.
+                  measures the height and motion of the ocean surface, helping analyze currents and
+                  zones of high oceanic productivity.
                 </p>
               </div>
             </div>
           </Card>
 
-          {/* Estudios */}
+          {/* Studies */}
           <Card className="p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-3 bg-accent/10 rounded-lg">
                 <BookOpen className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground">Estudios Consultados</h3>
+              <h3 className="text-2xl font-bold text-foreground">Referenced Studies</h3>
             </div>
             <div className="space-y-4">
               <a
@@ -95,7 +101,7 @@ export function References() {
                   Global patterns of shark movements and behavior
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Estudio sobre patrones globales de migración y comportamiento de tiburones mediante datos satelitales.
+                  Study on global shark migration and behavioral patterns using satellite data.
                 </p>
               </a>
               <a
@@ -112,7 +118,7 @@ export function References() {
                   Spatial ecology of sharks in the Anthropocene
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Investigación sobre cómo las actividades humanas modifican el comportamiento espacial de los tiburones.
+                  Research on how human activities alter the spatial behavior of sharks.
                 </p>
               </a>
               <a
@@ -129,15 +135,15 @@ export function References() {
                   Predicting predator distributions with satellite ocean data
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Relación entre la distribución de depredadores marinos y variables satelitales como temperatura y clorofila.
+                  Relationship between the distribution of marine predators and satellite variables
+                  such as temperature and chlorophyll concentration.
                 </p>
               </a>
-             
             </div>
           </Card>
         </div>
 
-        {/* Repositorio de código */}
+        {/* Code Repository */}
         <div className="grid md:grid-cols-1 gap-6 mb-8">
           <Card className="p-6 hover:shadow-lg transition-shadow">
             <div className="flex items-center justify-between mb-4">
@@ -145,14 +151,14 @@ export function References() {
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <ExternalLink className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground">Código disponible</h3>
+                <h3 className="text-2xl font-bold text-foreground">Available Code</h3>
               </div>
               <Badge variant="secondary">GitHub</Badge>
             </div>
 
             <p className="text-sm text-foreground mb-4">
-              Todo el código del proyecto está disponible en el repositorio público. Aquí encontrarás scripts de
-              procesamiento de datos, notebooks, y el frontend del sitio.
+              All project code is available in the public repository. Here you’ll find data processing
+              scripts, notebooks, and the site’s frontend.
             </p>
 
             <div className="flex items-center gap-3">
@@ -169,12 +175,12 @@ export function References() {
           </Card>
         </div>
 
-        {/* Nota final */}
+        {/* Final Note */}
         <Card className="p-6 bg-muted/50">
           <p className="text-sm text-center text-muted-foreground">
-            <strong className="text-foreground">Nota:</strong> Los datos presentados en esta plataforma provienen de
-            observaciones satelitales de misiones de la NASA (PACE, MODIS, SWOT) y están respaldados por investigaciones
-            científicas publicadas en revistas de alto impacto. El sistema de rastreo en vivo se encuentra en desarrollo.
+            <strong className="text-foreground">Note:</strong> The data presented on this platform come from
+            satellite observations from NASA missions (PACE, MODIS, SWOT) and are supported by
+            scientific research published in high-impact journals. The live tracking system is currently under development.
           </p>
         </Card>
       </div>

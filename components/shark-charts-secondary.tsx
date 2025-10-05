@@ -1,3 +1,8 @@
+/**
+ * AI-Assisted: Text translated to English by GPT-5 on 2025-10-05 (requested by Jose).
+ * Structure supported by Vercel platform.
+ */
+
 "use client"
 
 import { Card } from "@/components/ui/card"
@@ -16,9 +21,13 @@ export function SharkChartsSecondary() {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Cómo funciona el modelo</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">How the Model Works</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-              Gracias a los datos obtenidos por el satélite PACE (Plankton, Aerosol, Cloud, ocean Ecosystem), pudimos analizar cómo la presencia de fitoplancton —los diminutos organismos que flotan en el mar y forman la base de la cadena alimenticia— se relaciona con el comportamiento y desplazamiento de los tiburones. Utilizamos mediciones de color oceánico y concentración de clorofila para detectar las zonas donde el fitoplancton es más abundante, ya que esas áreas suelen atraer peces pequeños… y, con ellos, a los grandes depredadores.
+              Thanks to the data obtained from NASA’s PACE satellite (Plankton, Aerosol, Cloud, ocean Ecosystem),
+              we were able to analyze how the presence of phytoplankton —the tiny organisms floating in the ocean
+              that form the base of the food chain— relates to shark behavior and movement.
+              We used ocean color and chlorophyll concentration measurements to detect areas where phytoplankton
+              is most abundant, as those regions often attract small fish… and, consequently, large predators.
             </p>
           </div>
 
@@ -28,11 +37,11 @@ export function SharkChartsSecondary() {
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">Imagen del satélite</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">Satellite Image</h3>
               <div className="w-full h-[300px] flex items-center justify-center">
                 <img
                   src="/gallery/gallery-1.jpg"
-                  alt="Gráfico de evolución de amenazas a tiburones: sobrepesca, cambio climático y contaminación"
+                  alt="Satellite image showing shark threat evolution: overfishing, climate change, and pollution"
                   className="w-full h-full object-contain rounded-lg"
                 />
               </div>
@@ -43,11 +52,11 @@ export function SharkChartsSecondary() {
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">Imagen con filtros espectrales</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">Spectral Filter Image</h3>
               <div className="w-full h-[300px] flex items-center justify-center">
                 <img
                   src="/gallery/gallery-10.jpg"
-                  alt="Gráfico de distribución de tiburones por tipo de hábitat"
+                  alt="Filtered spectral image showing shark habitat distribution"
                   className="w-full h-full object-contain rounded-lg"
                 />
               </div>
