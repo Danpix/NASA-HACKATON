@@ -9,10 +9,7 @@ export function SharkGallery() {
   const [currentSet, setCurrentSet] = useState<"set1" | "set2">("set1")
   const { ref, isVisible } = useScrollAnimation()
 
-  // INSTRUCCIONES PARA CAMBIAR IMÁGENES:
-  // Reemplaza las imágenes en la carpeta public/gallery/
-  // Set 1: gallery-1.jpg hasta gallery-9.jpg
-  // Set 2: gallery-10.jpg hasta gallery-18.jpg
+
   const gallerySet1 = [
     "/gallery/gallery-1.jpg",
     "/gallery/gallery-2.jpg",
@@ -53,9 +50,9 @@ export function SharkGallery() {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Galería de Tiburones</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">Ejemplos de datos procesados</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Explora imágenes fascinantes de tiburones en su hábitat natural
+              Prueba darle al boton y veras la magia!😀
             </p>
           </div>
 
@@ -84,7 +81,7 @@ export function SharkGallery() {
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               <RefreshCw className="mr-2 h-5 w-5" />
-              {currentSet === "set1" ? "Cambiar a Más Imágenes" : "Volver a Imágenes Anteriores"}
+              {currentSet === "set1" ? "MIRA EL FILTRADO!" : "VOLVER"}
             </Button>
           </div>
         </div>
