@@ -16,13 +16,9 @@ export function SharkChartsSecondary() {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Relacion entre fitoplanton y los tiburones</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Cómo funciona el modelo</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-              El análisis de amenazas muestra un incremento alarmante en los factores que afectan a las poblaciones de
-              tiburones. La sobrepesca continúa siendo la mayor amenaza, seguida por el cambio climático que altera las
-              temperaturas oceánicas y las corrientes marinas. La distribución de hábitats revela que la mayoría de
-              especies prefieren el océano abierto y aguas costeras, donde lamentablemente también enfrentan mayor
-              presión humana.
+              Gracias a los datos obtenidos por el satélite PACE (Plankton, Aerosol, Cloud, ocean Ecosystem), pudimos analizar cómo la presencia de fitoplancton —los diminutos organismos que flotan en el mar y forman la base de la cadena alimenticia— se relaciona con el comportamiento y desplazamiento de los tiburones. Utilizamos mediciones de color oceánico y concentración de clorofila para detectar las zonas donde el fitoplancton es más abundante, ya que esas áreas suelen atraer peces pequeños… y, con ellos, a los grandes depredadores.
             </p>
           </div>
 
@@ -32,7 +28,7 @@ export function SharkChartsSecondary() {
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
               }`}
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">Evolución de Amenazas (2015-2023)</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">Imagen del satélite</h3>
               <div className="w-full h-[300px] flex items-center justify-center">
                 <img
                   src="/gallery/gallery-1.jpg"
@@ -47,7 +43,7 @@ export function SharkChartsSecondary() {
                 isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
               }`}
             >
-              <h3 className="text-2xl font-bold mb-4 text-center">Distribución por Tipo de Hábitat</h3>
+              <h3 className="text-2xl font-bold mb-4 text-center">Imagen con filtros espectrales</h3>
               <div className="w-full h-[300px] flex items-center justify-center">
                 <img
                   src="/gallery/gallery-10.jpg"
