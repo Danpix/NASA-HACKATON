@@ -2,44 +2,8 @@
 
 import { Card } from "@/components/ui/card"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import {
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts"
 
-const populationData = [
-  { year: "2010", ballena: 75000, blanco: 3500 },
-  { year: "2013", ballena: 78000, blanco: 3200 },
-  { year: "2016", ballena: 82000, blanco: 3000 },
-  { year: "2019", ballena: 85000, blanco: 2800 },
-  { year: "2022", ballena: 88000, blanco: 2600 },
-  { year: "2024", ballena: 90000, blanco: 2500 },
-]
-
-const migrationData = [
-  { mes: "Ene", distancia: 800 },
-  { mes: "Feb", distancia: 1200 },
-  { mes: "Mar", distancia: 1800 },
-  { mes: "Abr", distancia: 2400 },
-  { mes: "May", distancia: 3000 },
-  { mes: "Jun", distancia: 3200 },
-  { mes: "Jul", distancia: 2800 },
-  { mes: "Ago", distancia: 2200 },
-  { mes: "Sep", distancia: 1600 },
-  { mes: "Oct", distancia: 1200 },
-  { mes: "Nov", distancia: 900 },
-  { mes: "Dic", distancia: 800 },
-]
-
-export function SharkCharts() {
+export function SharkChart() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
@@ -70,17 +34,13 @@ export function SharkCharts() {
               }`}
             >
               <h3 className="text-2xl font-bold mb-4 text-center">Población Estimada (2010-2024)</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={populationData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Bar dataKey="ballena" fill="hsl(var(--ocean-medium))" name="Tiburón Ballena" />
-                  <Bar dataKey="blanco" fill="hsl(var(--ocean-deep))" name="Tiburón Blanco" />
-                </BarChart>
-              </ResponsiveContainer>
+              <div className="w-full h-[300px] flex items-center justify-center">
+                <img
+                  src="/gallery/gallery-2.jpg"
+                  alt="Gráfico de población estimada de tiburones ballena y blanco 2010-2024"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
             </Card>
 
             <Card
@@ -89,22 +49,13 @@ export function SharkCharts() {
               }`}
             >
               <h3 className="text-2xl font-bold mb-4 text-center">Distancia de Migración Promedio (km/mes)</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <LineChart data={migrationData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="mes" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Line
-                    type="monotone"
-                    dataKey="distancia"
-                    stroke="hsl(var(--ocean-accent))"
-                    strokeWidth={3}
-                    name="Distancia (km)"
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+              <div className="w-full h-[300px] flex items-center justify-center">
+                <img
+                  src="/gallery/gallery-11.jpg"
+                  alt="Gráfico de distancia de migración promedio de tiburones por mes"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
             </Card>
           </div>
         </div>

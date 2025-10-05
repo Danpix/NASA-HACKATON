@@ -64,11 +64,10 @@ export function HeroSection() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center">
         <div className="max-w-4xl space-y-6">
           <h1 className="text-balance font-sans text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-8xl">
-            Rastreador de Tiburones
+            AURORA
           </h1>
-          <p className="text-pretty text-xl text-white/90 md:text-2xl lg:text-3xl">
-            Descubre la ubicación de tiburones en tiempo real y explora el fascinante mundo de estos majestuosos
-            depredadores marinos
+          <p className="text-pretty text-xl text-white/90 md:text-3xl lg:text-3xl">
+            Ultra-Resolution Ocean Analysis for Advanced Tracking
           </p>
           <Button
             onClick={scrollToTracking}

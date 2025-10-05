@@ -2,34 +2,6 @@
 
 import { Card } from "@/components/ui/card"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import {
-  AreaChart,
-  Area,
-  PieChart,
-  Pie,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts"
-
-const threatsData = [
-  { year: "2015", sobrepesca: 45, cambioClimatico: 25, contaminacion: 30 },
-  { year: "2017", sobrepesca: 50, cambioClimatico: 28, contaminacion: 32 },
-  { year: "2019", sobrepesca: 55, cambioClimatico: 32, contaminacion: 35 },
-  { year: "2021", sobrepesca: 58, cambioClimatico: 38, contaminacion: 38 },
-  { year: "2023", sobrepesca: 60, cambioClimatico: 42, contaminacion: 40 },
-]
-
-const habitatData = [
-  { name: "Aguas Costeras", value: 35, color: "hsl(var(--ocean-light))" },
-  { name: "Océano Abierto", value: 40, color: "hsl(var(--ocean-medium))" },
-  { name: "Arrecifes", value: 15, color: "hsl(var(--ocean-accent))" },
-  { name: "Aguas Profundas", value: 10, color: "hsl(var(--ocean-deep))" },
-]
 
 export function SharkChartsSecondary() {
   const { ref, isVisible } = useScrollAnimation()
@@ -44,7 +16,7 @@ export function SharkChartsSecondary() {
           }`}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Amenazas y Distribución de Hábitats</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Relacion entre fitoplanton y los tiburones</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
               El análisis de amenazas muestra un incremento alarmante en los factores que afectan a las poblaciones de
               tiburones. La sobrepesca continúa siendo la mayor amenaza, seguida por el cambio climático que altera las
@@ -61,39 +33,13 @@ export function SharkChartsSecondary() {
               }`}
             >
               <h3 className="text-2xl font-bold mb-4 text-center">Evolución de Amenazas (2015-2023)</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={threatsData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" />
-                  <YAxis />
-                  <Tooltip />
-                  <Legend />
-                  <Area
-                    type="monotone"
-                    dataKey="sobrepesca"
-                    stackId="1"
-                    stroke="hsl(var(--ocean-deep))"
-                    fill="hsl(var(--ocean-deep))"
-                    name="Sobrepesca"
-                  />
-                  <Area
-                    type="monotone"
-                    dataKey="cambioClimatico"
-                    stackId="1"
-                    stroke="hsl(var(--ocean-medium))"
-                    fill="hsl(var(--ocean-medium))"
-                    name="Cambio Climático"
-                  />
-                  <Area
-                    type="monotone"
-                    dataKey="contaminacion"
-                    stackId="1"
-                    stroke="hsl(var(--ocean-accent))"
-                    fill="hsl(var(--ocean-accent))"
-                    name="Contaminación"
-                  />
-                </AreaChart>
-              </ResponsiveContainer>
+              <div className="w-full h-[300px] flex items-center justify-center">
+                <img
+                  src="/gallery/gallery-1.jpg"
+                  alt="Gráfico de evolución de amenazas a tiburones: sobrepesca, cambio climático y contaminación"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
             </Card>
 
             <Card
@@ -102,25 +48,13 @@ export function SharkChartsSecondary() {
               }`}
             >
               <h3 className="text-2xl font-bold mb-4 text-center">Distribución por Tipo de Hábitat</h3>
-              <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                  <Pie
-                    data={habitatData}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={100}
-                    fill="#8884d8"
-                    dataKey="value"
-                  >
-                    {habitatData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
+              <div className="w-full h-[300px] flex items-center justify-center">
+                <img
+                  src="/gallery/gallery-10.jpg"
+                  alt="Gráfico de distribución de tiburones por tipo de hábitat"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
             </Card>
           </div>
         </div>
