@@ -3,15 +3,17 @@
 import { useEffect, useRef, useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Activity } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { MapPin, Activity, Info, Construction } from "lucide-react"
+import Link from "next/link"
 
 // Datos simulados de tiburones en tiempo real
 const liveSharkData = [
-  { id: 1, name: "Luna", species: "Tiburón Ballena", lat: 20.5, lng: -87.3, status: "activo" },
-  { id: 2, name: "Neptuno", species: "Gran Blanco", lat: -34.5, lng: 18.8, status: "activo" },
-  { id: 3, name: "Coral", species: "Tiburón Ballena", lat: 8.2, lng: 77.5, status: "activo" },
-  { id: 4, name: "Atlas", species: "Gran Blanco", lat: 37.8, lng: -122.4, status: "activo" },
-  { id: 5, name: "Marina", species: "Tiburón Ballena", lat: -12.0, lng: 96.8, status: "activo" },
+  { id: 1, name: "Luna", species: "Tiburón Ballena", lat: 20.5, lng: -87.3, status: "pendiente" },
+  { id: 2, name: "Neptuno", species: "Gran Blanco", lat: -34.5, lng: 18.8, status: "pendiente" },
+  { id: 3, name: "Coral", species: "Tiburón Ballena", lat: 8.2, lng: 77.5, status: "pendiente" },
+  { id: 4, name: "Atlas", species: "Gran Blanco", lat: 37.8, lng: -122.4, status: "pendiente" },
+  { id: 5, name: "Marina", species: "Tiburón Ballena", lat: -12.0, lng: 96.8, status: "pendiente" },
 ]
 
 export function LiveTrackingMap() {
@@ -38,8 +40,27 @@ export function LiveTrackingMap() {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          {/* Mapa */}
-          <Card className="lg:col-span-2 overflow-hidden p-0">
+          <Card className="lg:col-span-2 overflow-hidden p-0 relative">
+            {/* Overlay de en proceso */}
+            <div className="absolute inset-0 z-10 bg-background/80 backdrop-blur-sm flex flex-col items-center justify-center gap-4">
+              <Construction className="h-16 w-16 text-accent animate-pulse" />
+              <div className="text-center px-4">
+                <h3 className="text-2xl font-bold mb-2">Sistema en Desarrollo</h3>
+                <p className="text-muted-foreground mb-4">El rastreo en tiempo real estará disponible próximamente</p>
+                <Link href="/tracking-device">
+                  <Button className="gap-2">
+                    <Info className="h-4 w-4" />
+                    Conoce el Dispositivo de Rastreo
+                  </Button>
+                </Link>
+              </div>
+              <div className="flex gap-2">
+                <div className="h-2 w-2 rounded-full bg-accent animate-bounce" style={{ animationDelay: "0ms" }} />
+                <div className="h-2 w-2 rounded-full bg-accent animate-bounce" style={{ animationDelay: "150ms" }} />
+                <div className="h-2 w-2 rounded-full bg-accent animate-bounce" style={{ animationDelay: "300ms" }} />
+              </div>
+            </div>
+
             <div
               ref={mapRef}
               className="relative h-[500px] w-full bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20"
@@ -49,19 +70,18 @@ export function LiveTrackingMap() {
                 <img
                   src="/world-map-ocean-blue-topographic.jpg"
                   alt="Mapa mundial"
-                  className="h-full w-full object-cover opacity-60"
+                  className="h-full w-full object-cover opacity-30"
                 />
               </div>
               {/* Marcadores simulados */}
               {liveSharkData.map((shark, index) => (
                 <div
                   key={shark.id}
-                  className="absolute animate-pulse cursor-pointer"
+                  className="absolute opacity-30"
                   style={{
                     left: `${20 + index * 15}%`,
                     top: `${30 + (index % 3) * 20}%`,
                   }}
-                  onClick={() => setSelectedShark(shark.id)}
                 >
                   <MapPin className="h-8 w-8 text-destructive drop-shadow-lg" fill="currentColor" />
                 </div>
@@ -89,7 +109,7 @@ export function LiveTrackingMap() {
                         {shark.lat.toFixed(2)}°, {shark.lng.toFixed(2)}°
                       </p>
                     </div>
-                    <Badge variant="outline" className="border-green-500 text-green-500">
+                    <Badge variant="outline" className="border-yellow-500 text-yellow-500">
                       {shark.status}
                     </Badge>
                   </div>
