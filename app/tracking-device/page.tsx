@@ -3,7 +3,7 @@
 /**
  * TrackingDevicePage
  * Content translated and curated with AI assistance (model: GPT-5)
- * Deployment target: Vercel (Next.js 14 / App Router)
+ * Deployment target: Vercel / Netlify (Next.js 14 / App Router)
  */
 
 import { Card } from "@/components/ui/card"
@@ -25,6 +25,8 @@ import {
 import Link from "next/link"
 import Image from "next/image"
 
+const PDF_URL = "/pdfs/project-aurora-segundo-reto.pdf"
+
 export default function TrackingDevicePage() {
   return (
     <main className="min-h-screen bg-background">
@@ -38,14 +40,20 @@ export default function TrackingDevicePage() {
             </Button>
           </Link>
 
-          {/* (Optional) Button to open the PDF if you place it in /public */}
+          {/* Button: scroll to embedded PDF viewer */}
           <div className="ml-auto">
-            <Link href="/ProjectSegundo reto" target="_blank">
-              <Button variant="outline" size="sm" className="gap-2">
-                <BookOpen className="h-4 w-4" />
-                View PDF
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2"
+              onClick={() => {
+                const el = document.getElementById("aurora-pdf-viewer")
+                if (el) el.scrollIntoView({ behavior: "smooth" })
+              }}
+            >
+              <BookOpen className="h-4 w-4" />
+              View PDF
+            </Button>
           </div>
         </div>
       </div>
@@ -192,7 +200,7 @@ export default function TrackingDevicePage() {
             </div>
           </Card>
 
-          {/* Impact Section */}
+          {/* Conservation & Ops */}
           <div className="mt-16 text-center">
             <h2 className="text-3xl font-bold mb-4">Conservation Impact</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -211,6 +219,30 @@ export default function TrackingDevicePage() {
                 Back to Live Tracking
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================  EMBEDDED PDF VIEWER  ======================== */}
+      <section id="aurora-pdf-viewer" className="py-16 border-t bg-card/10">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4 text-center">PDF Document: AURORA Project</h2>
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+            View the <strong>Project AURORA — Segundo reto</strong> file directly on the page.
+          </p>
+          <div className="w-full h-[80vh] border rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src={PDF_URL}
+              title="Project AURORA — Segundo reto"
+              width="100%"
+              height="100%"
+              className="border-0"
+            />
+          </div>
+          <div className="text-center mt-3">
+            <a href={PDF_URL} target="_blank" className="underline text-sm">
+              Open PDF in a new tab
+            </a>
           </div>
         </div>
       </section>

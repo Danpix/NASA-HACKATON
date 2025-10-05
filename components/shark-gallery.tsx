@@ -1,14 +1,18 @@
-/**
- * AI-Assisted: Text translated to English by GPT-5 on 2025-10-05 (requested by Jose).
+/** * AI-Assisted: Text translated to English by GPT-5 on 2025-10-05 (requested by Jose).
  * Structure supported by Vercel platform.
  */
 
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { RefreshCw } from "lucide-react"
+import { RefreshCw, Github, FileText } from "lucide-react"
+
+const GITHUB_URL = "https://github.com/blised/Clorofila"
+const PDF_URL = "/pdfs/project-aurora-chlorophyll-mapping-model.pdf"
+const PDF_HASH = "#aurora-pdf-viewer"
 
 export function SharkGallery() {
   const [currentSet, setCurrentSet] = useState<"set1" | "set2">("set1")
@@ -40,8 +44,16 @@ export function SharkGallery() {
 
   const currentImages = currentSet === "set1" ? gallerySet1 : gallerySet2
 
-  const toggleSet = () => {
-    setCurrentSet(currentSet === "set1" ? "set2" : "set1")
+  const toggleSet = () => setCurrentSet(currentSet === "set1" ? "set2" : "set1")
+
+  // Try to smooth-scroll to the PDF viewer if present; otherwise open PDF directly.
+  const goToPdf = (e: React.MouseEvent) => {
+    const el = document.getElementById("aurora-pdf-viewer")
+    if (el) {
+      e.preventDefault()
+      el.scrollIntoView({ behavior: "smooth" })
+    }
+    // if not found, the Link's href will handle navigation/opening
   }
 
   return (
@@ -80,6 +92,7 @@ export function SharkGallery() {
             ))}
           </div>
 
+          {/* Toggle button */}
           <div className="flex justify-center mt-8">
             <Button
               onClick={toggleSet}
@@ -89,6 +102,37 @@ export function SharkGallery() {
               <RefreshCw className="mr-2 h-5 w-5" />
               {currentSet === "set1" ? "SEE FILTERED DATA!" : "GO BACK"}
             </Button>
+          </div>
+
+          {/* NEW: GitHub + PDF buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+            {/* GitHub */}
+            <Button asChild variant="outline" className="px-6">
+              <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                View Code on GitHub
+              </Link>
+            </Button>
+
+            {/* PDF: try to scroll to viewer; fallback opens the PDF */}
+            <Button asChild variant="secondary" className="px-6">
+              <Link href={`${PDF_HASH}`} onClick={goToPdf} target="_self">
+                <FileText className="mr-2 h-4 w-4" />
+                View Documentation (PDF)
+              </Link>
+            </Button>
+          </div>
+
+          {/* Optional tiny helper link if user opened component in another route without the viewer */}
+          <div className="text-center mt-2">
+            <Link
+              href={PDF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-muted-foreground underline"
+            >
+              Open PDF directly (fallback)
+            </Link>
           </div>
         </div>
       </div>
